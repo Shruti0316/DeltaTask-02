@@ -80,10 +80,9 @@ function update(){
         //Collision Detection
         document.getElementById('score').textContent="Score: "+score;
         if((obstacle.x1>=0 && obstacle.x1<=50 && block.y==50) ||(obstacle.x2>=0 && obstacle.x2<=50 && block.y==300)){   
-            var aud=new Audio("go.wav");
-            aud.play();     
-           document.getElementById('overlay').style.display="block";
-           document.getElementById('urscore').textContent='Score: '+score;
+            document.getElementById('gameover').play();      
+            document.getElementById('overlay').style.display="block";
+            document.getElementById('urscore').textContent='Score: '+score;
         
         //retriving highscore value from local storage
         var highscore=localStorage.getItem('hscore');
@@ -110,25 +109,25 @@ requestAnimationFrame(update);
 
 //event listeners
 canvas.addEventListener('click',function(e){
-    console.log('click');
+    //console.log('click');
     if(block.y===300){
-        
+        document.getElementById("jump").play();
         block.y=50;
     }
     else{
-        
+        document.getElementById("jump").play();
         block.y=300;
     }
 });
 document.addEventListener('keyup',function(e){
     if(e.code==='Space'){
-        console.log('space');
+        //console.log('space');
         if(block.y===300){
-          
+            document.getElementById("jump").play();
             block.y=50;
         }
         else{
-           
+            document.getElementById("jump").play();
             block.y=300;
         }
     }
