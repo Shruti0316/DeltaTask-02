@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
     font-family: 'gameover';
     src: url(game_over.ttf);
 }
@@ -32,7 +32,6 @@ canvas{
     color: whitesmoke;
     padding-top: 250px;
 }
-    
 .again{
     font-weight: bold;
     font-size: 20px;
